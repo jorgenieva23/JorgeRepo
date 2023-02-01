@@ -1,0 +1,12 @@
+.mainContainerCreation {
+    margin-top: 2%;
+    padding: 2%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    background-color: rgb(1, 53, 5);
+    box-shadow: 6px 7px 8px -6px rgba(69, 69, 69, 0.7);
+    border-radius: 15px;
+    color: white;
+}

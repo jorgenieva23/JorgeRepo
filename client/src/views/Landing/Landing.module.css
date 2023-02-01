@@ -1,0 +1,50 @@
+.landing{
+  display: flex;
+  flex-direction: column;
+  width: 100vw;
+  min-height: 100vh;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+.title {
+  font-size: 60px;
+
+}
+
+.button {
+  background: #fff; 
+  color: #4741d7; 
+  border: 2px solid #4741d7; 
+  padding: 16px 20px;
+  border-radius: 3px; 
+  position: relative;
+  z-index: 1;
+  overflow: hidden;
+  display: inline-block;
+}
+.button:hover {
+  color: #fff; 
+}
+.button::after {
+  content: "";
+  background: #4741d7; 
+  position: absolute;
+  z-index: -1;
+  padding: 16px 20px;
+  display: block;
+  top: 0;
+  bottom: 0;
+  left: -100%;
+  right: 100%;
+  -webkit-transition: all 0.35s;
+  transition: all 0.35s;
+}
+.button:hover::after {
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  -webkit-transition: all 0.35s;
+  transition: all 0.35s;
+}
