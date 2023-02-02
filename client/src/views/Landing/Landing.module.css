@@ -13,9 +13,9 @@
 }
 
 .button {
-  background: #fff; 
-  color: #4741d7; 
-  border: 2px solid #4741d7; 
+  background: #434242; 
+  color: #F3EFE0; 
+  border: 2px solid #222222; 
   padding: 16px 20px;
   border-radius: 3px; 
   position: relative;
@@ -24,11 +24,11 @@
   display: inline-block;
 }
 .button:hover {
-  color: #fff; 
+  color: #222222; 
 }
 .button::after {
   content: "";
-  background: #4741d7; 
+  background: #22A39F; 
   position: absolute;
   z-index: -1;
   padding: 16px 20px;

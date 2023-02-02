@@ -25,6 +25,7 @@ arr.map((e)=>{
         id:e.id,
         name:e.name,
         life_span: e.life_span,
+        precio: e.precio,
         height_max: e.height_max,
         height_min: e.height_min,
         weight_max: e.weight_max,
@@ -35,22 +36,6 @@ arr.map((e)=>{
     }
 }) 
 
-
-// const getDogById = async (id, source) => {
-//     const dog = source === "api"
-//         ? (await axios.get(`https://api.thedogapi.com/v1/breeds/${id}`)).data
-//         : await Dog.findByPk(id, {
-//             include: {
-//                 model: Temperament,
-//                 attributes: ['name'],
-//                 through: {
-//                     attributes: []
-//                 }
-//             }
-//           });
-  
-//     return dog;
-//   };
 
 
 

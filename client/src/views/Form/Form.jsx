@@ -4,6 +4,11 @@ import { useHistory } from "react-router-dom";
 import { createDogs, getTemperaments } from "../../redux/actions";
 import { useDispatch, useSelector } from "react-redux";
 
+const Inp = ()=>{
+  const [name, setName] = useState("");
+  const [selectedFile, setSelectedFile] = useState(null);
+}
+
 const validate = (form) => {
   let errors = {};
   if (!form.name) {
@@ -170,7 +175,7 @@ export default function Form() {
               value={form.name}
               name="name"
               onChange={(e) => handleChange(e)}
-              required
+              // required
             />
             {errors.name && <p className="error">{errors.name}</p>}
           </p>
@@ -183,7 +188,7 @@ export default function Form() {
               value={form.weight_max}
               name="weight_max"
               onChange={(e) => handleChange(e)}
-              required
+              // required
             />
             {errors.weight_max && <p className="error">{errors.weight_max}</p>}
           </p>
@@ -196,7 +201,7 @@ export default function Form() {
               value={form.weight_min}
               name="weight_min"
               onChange={(e) => handleChange(e)}
-              required
+              // required
             />
             {errors.weight_min && <p className="error">{errors.weight_min}</p>}
           </p>
@@ -209,7 +214,7 @@ export default function Form() {
               value={form.height_max}
               name="height_max"
               onChange={(e) => handleChange(e)}
-              required
+              // required
             />
             {errors.height_max && <p className="error">{errors.height_max}</p>}
           </p>
@@ -222,7 +227,7 @@ export default function Form() {
               value={form.height_min}
               name="height_min"
               onChange={(e) => handleChange(e)}
-              required
+              // required
             />
             {errors.height_min && <p className="error">{errors.height_min}</p>}
           </p>
@@ -235,22 +240,30 @@ export default function Form() {
               value={form.life_span}
               name="life_span"
               onChange={(e) => handleChange(e)}
-              required
+              // required
             />
             {errors.life_span && <p className="error">{errors.life_span}</p>}
           </p>
-          {/* <div>
+          <div>
             <label>Photo: </label>
             <p>
               <input
-                type="file"
+                type="text"
                 value={form.image}
                 name="image"
                 onChange={(e) => handleChange(e)}
-                required
+                // required
+              />
+              <input
+              type="file"
+              value={form.image}
+              name="image"
+              onChange={(e) => handleChange(e)}
+              // required
+
               />
             </p>
-          </div> */}
+          </div> 
           <select onChange={(e) => handleSelect(e)}>
             <option value="selected" hidden>
               Temperaments
