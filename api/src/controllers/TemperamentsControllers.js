@@ -36,7 +36,7 @@ const getAllTemp = async () => {
             where: {name: el}
       }))  
 
-    //   console.log(aux2) 
+//    console.log(aux) 
       return apiTemp                    
 }
 

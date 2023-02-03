@@ -5,13 +5,11 @@ const { createDog, getAllDogs, getDogById, searchDogByName} = require("../contro
 
 
 const getDogsHandler = async (req, res)=>{
-    try {
-        const { name } = req.query
-        const results = name ? await searchDogByName(name) : await getAllDogs();
-        res.status(200).json(results);
-    } catch (error) {
-        res.status(404).send(error)
-    }
+    const { name } = req.query
+
+    const results = name ? await searchDogByName(name) : await getAllDogs();
+
+    res.status(200).json(results);
 };
 
 
@@ -32,37 +30,26 @@ const getDogHandler = async (req, res) => {
 
 
 const createDogHandler = async (req, res)=> {
-    let { name, 
-        image, 
-        temperament, 
-        life_span, 
-        height_max, 
-        height_min, 
-        weight_max, 
-        weight_min, 
-        createdInDB } = req.body
+    let { name, image, temperament,  life_span, height_max, 
+        height_min,  weight_max,  weight_min, createdInDB } = req.body  
+        console.log(temperament);    
         try {
             let newDog = await createDog (
-                name, 
-                image, 
-                temperament, 
-                life_span, 
-                height_max, 
-                height_min, 
-                weight_max, 
-                weight_min, 
-                createdInDB );
-                temperament.map(async el =>{
-                    const tempsBss =  await Temperament.findAll({
-                        where:{name:el}
-                    })
-                    newDog.addTemperament(tempsBss)
-                })
-            res.status(201).json("Creado exitosamente")
-        } catch (error) {
+                name, image, temperament,  life_span, height_max, 
+                 height_min,  weight_max,  weight_min, createdInDB )
+
+                const temp = await Temperament.findAll({
+                    where:{name:temperament}
+            })
+            newDog.addTemperament(temp)
+            res.status(201).json("Creado exitosamente")       
+        }
+            catch (error) {         
             res.status(400).json({ error: error.message });
         }
-}
+    }
+
+
 
 
 module.exports={getDogsHandler, createDogHandler, getDogHandler}

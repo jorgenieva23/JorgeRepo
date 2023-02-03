@@ -4,10 +4,6 @@ import { useHistory } from "react-router-dom";
 import { createDogs, getTemperaments } from "../../redux/actions";
 import { useDispatch, useSelector } from "react-redux";
 
-const Inp = ()=>{
-  const [name, setName] = useState("");
-  const [selectedFile, setSelectedFile] = useState(null);
-}
 
 const validate = (form) => {
   let errors = {};
@@ -102,10 +98,10 @@ export default function Form() {
     height_min: "",
     life_span: "",
     image: "",
-    temperaments: [],
+    temperament: [],
   });
   
-  console.log(form.temperaments);
+  console.log(form.temperament);
 
   useEffect(() => {
     dispatch(getTemperaments());
@@ -126,10 +122,10 @@ export default function Form() {
   }
 
   function handleSelect(e) {
-    if (!form.temperaments.includes(e.target.value)) {
+    if (!form.temperament.includes(e.target.value)) {
       setForm({
         ...form,
-        temperaments: [...form.temperaments, e.target.value],
+        temperament: [...form.temperament, e.target.value],
       });
     }
   }
@@ -137,13 +133,13 @@ export default function Form() {
   function handleDelete(e) {
     setForm({
       ...form,
-      temperaments: form.temperaments.filter((temp) => temp !== e),
+      temperament: form.temperament.filter((temp) => temp !== e),
     });
   }
   
   function handleSubmit(e) {
     e.preventDefault();
-    console.log(form.temperaments);
+    console.log(form.temperament);
     dispatch(createDogs(form));
     alert("creado exitosamente");
     setForm({
@@ -154,7 +150,7 @@ export default function Form() {
       height_min: "",
       life_span: "",
       image: "",
-      temperaments: [],
+      temperament: [],
     });
     history.push("/home");
   }
@@ -162,7 +158,7 @@ export default function Form() {
     dispatch(getTemperaments());
   }, [dispatch]);
 
-
+  console.log(form);
   return (
     <div className={style.mainContainerCreation}>
       <h1>Crea tu perro</h1>
@@ -279,7 +275,7 @@ export default function Form() {
               })}
           </select>
         </div>
-        {form.temperaments.map((el) => (
+        {form.temperament.map((el) => (
           <div>
             <p>{el}</p>
             <button onClick={() => handleDelete(el)}>x</button>

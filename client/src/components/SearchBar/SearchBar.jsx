@@ -24,7 +24,7 @@ export default function SearchBar() {
     e.preventDefault(e);
     dispatch(getDogName(name));
     name.length === 0
-      ? alert("puto, ingresa el nombre")
+      ? alert("ingresa el nombre")
       : dispatch(getDogName(name));
     setName("");
   }

@@ -25,7 +25,6 @@ arr.map((e)=>{
         id:e.id,
         name:e.name,
         life_span: e.life_span,
-        precio: e.precio,
         height_max: e.height_max,
         height_min: e.height_min,
         weight_max: e.weight_max,
@@ -40,9 +39,9 @@ arr.map((e)=>{
 
 
 const createDog = async (name, image, temperament, 
-    life_span, height_max, height_min, weight_max, weight_min)=>{
+    life_span, height_max, height_min, weight_max, weight_min,)=>{
         return await Dog.create({name, temperament, image,
-            life_span, height_max, height_min, weight_max, weight_min})
+            life_span, height_max, height_min, weight_max, weight_min,})
 }
  
     

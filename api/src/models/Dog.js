@@ -12,33 +12,30 @@ module.exports = (sequelize) => {
     },
     name:{
       type: DataTypes.STRING,
-      allowNull: false,
+      allowNull: true
     },
     weight_max:{
       type: DataTypes.INTEGER,
-      allowNull: false
+      allowNull: true
     },
     weight_min:{
       type: DataTypes.INTEGER,
-      allowNull: false
+      allowNull: true
     },
     height_max:{
       type: DataTypes.INTEGER,
-      allowNull: false
+      allowNull: true
     },
     height_min:{
       type: DataTypes.INTEGER,
-      allowNull: false
+      allowNull: true
     },
     life_span:{
-      type: DataTypes.INTEGER,
-    },
-    precio:{
-      type: DataTypes.INTEGER,
+      type: DataTypes.STRING,
+      allowNull: true
     },
     image:{
       type: DataTypes.STRING,
-      allowNull: true
     },
     createdInDB: {
       type: DataTypes.BOOLEAN,
